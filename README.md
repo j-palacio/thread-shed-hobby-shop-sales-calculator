@@ -9,7 +9,6 @@ Welcome to the Thread Shed Cashier Application! This Python script is designed t
 * Clone this repository to your local machine using the following command:
 
 ```bash
-Copy code
 git clone <repository_url>
 ```
 
@@ -18,7 +17,6 @@ git clone <repository_url>
 * Change into the project directory:
 
 ```bash
-Copy code
 cd thread-shed-cashier
 ```
 
@@ -27,7 +25,6 @@ cd thread-shed-cashier
 * Execute the Python script to process and analyze daily sales transactions:
 
 ```bash
-Copy code
 python cashier_app.py
 ```
 
@@ -59,7 +56,6 @@ Feel free to explore and modify the code as needed for additional features or cu
 Enjoy using the Thread Shed Cashier Application! If you have any questions or suggestions, feel free to reach out.
 
 ```bash
-Copy code
 git clone <repository_url>
 cd thread-shed-cashier
 python cashier_app.py
