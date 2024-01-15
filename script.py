@@ -1,5 +1,4 @@
-daily_sales = \
-"""Edith Mcbride   ;,;$1.21   ;,;   white ;,; 
+daily_sales = """Edith Mcbride   ;,;$1.21   ;,;   white ;,; 
 09/15/17   ,Herbert Tran   ;,;   $7.29;,; 
 white&blue;,;   09/15/17 ,Paul Clarke ;,;$12.52 
 ;,;   white&blue ;,; 09/15/17 ,Lucille Caldwell   
@@ -105,61 +104,66 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 ;,; green&white&blue   ;,; 09/15/17 , Myrtle Morris 
 ;,;   $22.66   ;,; green&white&blue;,;09/15/17"""
 
-#------------------------------------------------
-# Start coding below!
+
 daily_sales_replaced = daily_sales.replace(";,;", "+")
 daily_transactions = daily_sales_replaced.split(",")
-#print(daily_transactions)
+# print(daily_transactions)
 
 daily_transactions_split = []
 for transaction in daily_transactions:
-  daily_transactions_split.append(transaction.split("+"))
-#print(daily_transactions_split)
+    daily_transactions_split.append(transaction.split("+"))
+# print(daily_transactions_split)
 
 transactions_clean = []
 for transaction in daily_transactions_split:
-  transaction_clean = []
-  for data_point in transaction:
-    transaction_clean.append(data_point.replace("\n", "").strip(" "))
-  transactions_clean.append(transaction_clean)
+    transaction_clean = []
+    for data_point in transaction:
+        transaction_clean.append(data_point.replace("\n", "").strip(" "))
+    transactions_clean.append(transaction_clean)
 
-#print(transactions_clean)
+# print(transactions_clean)
 
 customers = []
 sales = []
 thread_sold = []
 
 for transaction in transactions_clean:
-  customers.append(transaction[0])
-  sales.append(transaction[1])
-  thread_sold.append(transaction[2])
+    customers.append(transaction[0])
+    sales.append(transaction[1])
+    thread_sold.append(transaction[2])
 
-#print(customers)
-#print(sales)
-#print(thread_sold)
+# print(customers)
+# print(sales)
+# print(thread_sold)
 
 total_sales = 0
 for sale in sales:
-  total_sales += float(sale.strip("$"))
-#print(total_sales)
+    total_sales += float(sale.strip("$"))
+# print(total_sales)
 
-#print(thread_sold)
+# print(thread_sold)
 
 thread_sold_split = []
 for sale in thread_sold:
-  for color in sale.split("&"):
-      thread_sold_split.append(color)
+    for color in sale.split("&"):
+        thread_sold_split.append(color)
+
 
 def color_count(color):
-  color_total = 0
-  for thread_color in thread_sold_split:
-    if color == thread_color:
-      color_total +=1
-  return color_total
+    color_total = 0
+    for thread_color in thread_sold_split:
+        if color == thread_color:
+            color_total += 1
+    return color_total
 
-#print(color_count("white"))
 
-colors = ['red', 'yellow', 'green', 'white', 'black', 'blue', 'purple'] 
+# print(color_count("white"))
+
+colors = ["red", "yellow", "green", "white", "black", "blue", "purple"]
 
 for color in colors:
-    print("Thread Shed sold {0} threads of {1} thread today.".format(color_count(color), color))
+    print(
+        "Thread Shed sold {0} threads of {1} thread today.".format(
+            color_count(color), color
+        )
+    )
